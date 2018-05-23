@@ -17,6 +17,7 @@
 
 <script lang="ts">
 import { Component, Provide, Vue, Watch } from 'vue-property-decorator';
+import zip from 'lodash/zip';
 
 @Component
 export default class SPRDisplay extends Vue {
