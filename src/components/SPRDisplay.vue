@@ -37,10 +37,10 @@ export default class SPRDisplay extends Vue {
   private eventSubscription = this.source.pipe(
     filter( (event) => event.charCode === 32),
     take(this.words.length + 1),
-  ).subscribe( 
+  ).subscribe(
     (event) => this.nextWord(event),
     (error) => console.log(error),
-    () => this.logTimeStamps()
+    () => this.logTimeStamps(),
     );
 
   // @Watch('index')
