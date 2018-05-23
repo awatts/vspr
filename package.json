@@ -9,6 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@reactivex/rxjs": "^6.2.0",
     "@types/lodash": "^4.14.109",
     "lodash.zip": "^4.2.0",
     "vue": "^2.5.13",
