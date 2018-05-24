@@ -74,7 +74,7 @@ export default class SPRDisplay extends Vue {
   private calculateResponseTimes() {
     this.timeStamps.forEach((x: number, i: number, a: number[]) => {
       if (i > 0) {
-        this.responseTimes.push(x - a[i-1]);
+        this.responseTimes.push(x - a[i - 1]);
       }
     });
   }
