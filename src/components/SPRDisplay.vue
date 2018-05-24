@@ -1,5 +1,5 @@
 <template>
-  <div id=sprwords>
+  <div>
     <svg version="1.1"
          baseProfile="full"
          width="900" height="500"
@@ -67,7 +67,18 @@ export default class SPRDisplay extends Vue {
 
   private logTimeStamps() {
     console.log(this.timeStamps);
+    this.calculateResponseTimes();
+    console.log(this.responseTimes);
   }
+
+  private calculateResponseTimes() {
+    this.timeStamps.forEach((x: number, i: number, a: number[]) => {
+      if (i > 0) {
+        this.responseTimes.push(x - a[i-1]);
+      }
+    });
+  }
+
   private resetTrial() {
     this.index = -1;
   }
@@ -77,13 +88,12 @@ export default class SPRDisplay extends Vue {
 
 <style scoped lang="scss">
 
+  svg {
+     background-color: #cccccc;
+  }
+
   text {
     font-family: 'Droid Sans Mono', monospace;
     font-size: 24px;
-  }
-
-  #sprwords {
-    background-color: #cccccc;
-    font: monospace;
   }
 </style>
