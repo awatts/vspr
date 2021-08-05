@@ -5,7 +5,7 @@
          width="900" height="500"
          xlmns="http://www.w3.org/2000/svg">
       <rect width="100%" height="100%" fill="gray"/>
-      <text x="425" y="250" 
+      <text x="425" y="250"
             textlength="800" text-anchor="middle" lengthAdjust="spacingAndGlyphs"
             fill="white">
         {{dashedWords}}
@@ -17,7 +17,7 @@
 <script lang="ts">
 import { Component, Provide, Vue, Watch } from 'vue-property-decorator';
 import zip from 'lodash/zip';
-import { Observable } from 'rxjs';
+import { fromEvent } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
 
 
@@ -32,7 +32,7 @@ export default class SPRDisplay extends Vue {
 
   // In the real finished product, this would be a global and
   // each component would subscribe as needed
-  private source = Observable.fromEvent<KeyboardEvent>(document, 'keypress');
+  private source = fromEvent<KeyboardEvent>(document, 'keypress');
 
   private eventSubscription = this.source.pipe(
     filter( (event) => event.charCode === 32),
