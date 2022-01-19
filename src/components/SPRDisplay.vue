@@ -35,13 +35,13 @@ export default class SPRDisplay extends Vue {
   private source = fromEvent<KeyboardEvent>(document, 'keypress');
 
   private eventSubscription = this.source.pipe(
-    filter( (event) => event.charCode === 32),
+    filter( (event) => event.key === ' '),
     take(this.words.length + 1),
-  ).subscribe(
-    (event) => this.nextWord(event),
-    (error) => console.log(error),
-    () => this.logTimeStamps(),
-    );
+  ).subscribe({
+    next: (v) => this.nextWord(v),
+    error: (e) => console.log(e),
+    complete: () => this.logTimeStamps(),
+  });
 
   // @Watch('index')
   // private onChildChanged(val: number, oldVal: number) {
