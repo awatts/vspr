@@ -25,7 +25,7 @@ import { filter, take } from 'rxjs/operators';
 export default class SPRDisplay extends Vue {
   private words: string[] = ['the', 'quick', 'brown', 'fox', 'jumps',
                                         'over', 'the', 'lazy', 'dog'];
-  private index: number = -1;
+  private index = -1;
 
   private timeStamps: number[] = [];
   private responseTimes: number[] = [];
