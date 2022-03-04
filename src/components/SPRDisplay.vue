@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Provide, Vue, Watch } from 'vue-property-decorator';
+import { Component, Prop, Provide, Vue, Watch } from 'vue-property-decorator';
 import zip from 'lodash/zip';
 import { fromEvent } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
@@ -23,8 +23,7 @@ import { filter, take } from 'rxjs/operators';
 
 @Component
 export default class SPRDisplay extends Vue {
-  private words: string[] = ['the', 'quick', 'brown', 'fox', 'jumps',
-                                        'over', 'the', 'lazy', 'dog'];
+  @Prop() private words!: string[];
   private index = -1;
 
   private timeStamps: number[] = [];

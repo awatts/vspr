@@ -1,18 +1,15 @@
 <template>
   <div class="home">
-    <SPRDisplay />
-    <RSRBSurvey lab="Jaeger" protocol="FILL_ME_IN"/>
+    <SPRDisplay v-bind:words="['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import RSRBSurvey from '@/components/RSRBSurvey.vue';
 import SPRDisplay from '@/components/SPRDisplay.vue';
 
 @Component({
   components: {
-    RSRBSurvey,
     SPRDisplay,
   },
 })
